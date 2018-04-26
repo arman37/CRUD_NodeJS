@@ -1,29 +1,39 @@
+/**
+ *
+ * @author arman
+ * @since 25/2/2016.
+ *
+ */
 'use strict';
 
-var globals = require('../helpers/globals')
-    ,Person = globals.importModel('Person')
-    ,Sequelize = require('sequelize')
-    ,arrayWrap = require('arraywrap');
+const globals = require('../helpers/globals');
+const Person = globals.importModel('Person');
+const Sequelize = require('sequelize');
+const arrayWrap = require('arraywrap');
 
 module.exports = {
-    getAllPerson: function (config) {
-        return Person.findAll({ offset: config.offset, limit: config.limit });
-    },
-    addPerson: function (data) {
-        return Person.create(data);
-    },
-    updatePerson: function (personId, data) {
-        return Person.update(data, {
-            where: {
-                person_id: personId
-            }
-        });
-    },
-    deletePerson: function (personId) {
-        return Person.destroy({
-            where: {
-                person_id: personId
-            }
-        });
-    }
+  getAllPerson: (config) => {
+    return Person.findAll({ offset: config.offset, limit: config.limit });
+  },
+  addPerson: (data) => {
+    return Person.create(data);
+  },
+  updatePerson: (personId, data) => {
+    return (
+      Person.update(data, {
+        where: {
+          person_id: personId
+        }
+      })
+    );
+  },
+  deletePerson: (personId) => {
+    return (
+      Person.destroy({
+        where: {
+          person_id: personId
+        }
+      })
+    );
+  }
 };
