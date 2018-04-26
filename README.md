@@ -20,3 +20,7 @@ Application will start at 'http://localhost:3000' but you will have to configure
 CURL Preview
 ========
 ![Screenshot](/screenshots/screenshot.png)
+
+### License
+
+[MIT licensed](./LICENSE)
